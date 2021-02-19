@@ -42,6 +42,9 @@ public class ClientSession {
 
 		return connection.hasData();
 	}
+	public Connection getConnection() {
+		return connection;
+	}
 
 	public Message receive() {
 
