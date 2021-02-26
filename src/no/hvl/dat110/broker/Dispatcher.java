@@ -84,7 +84,7 @@ public class Dispatcher extends Stopable {
 		}
 	}
 
-	// called from Broker after having established the underlying connection
+	
 	public void onConnect(ConnectMsg msg, Connection connection) {
 
 		String user = msg.getUser();
@@ -95,7 +95,7 @@ public class Dispatcher extends Stopable {
 
 	}
 
-	// called by dispatch upon receiving a disconnect message
+	
 	public void onDisconnect(DisconnectMsg msg) {
 
 		String user = msg.getUser();
@@ -110,8 +110,7 @@ public class Dispatcher extends Stopable {
 
 		Logger.log("onCreateTopic:" + msg.toString());
 
-		// TODO: create the topic in the broker storage
-		// the topic is contained in the create topic message done
+	
 
 		storage.createTopic(msg.getTopic());
 
@@ -131,8 +130,7 @@ public class Dispatcher extends Stopable {
 
 		Logger.log("onSubscribe:" + msg.toString());
 
-		// TODO: subscribe user to the topic done
-		// user and topic is contained in the subscribe message
+
 
 		storage.addSubscriber(msg.getUser(), msg.getTopic());
 
@@ -142,8 +140,7 @@ public class Dispatcher extends Stopable {
 
 		Logger.log("onUnsubscribe:" + msg.toString());
 
-		// TODO: unsubscribe user to the topic done
-		// user and topic is contained in the unsubscribe message
+	
 
 		storage.removeSubscriber(msg.getUser(), msg.getTopic());
 	}
@@ -152,9 +149,7 @@ public class Dispatcher extends Stopable {
 
 		Logger.log("onPublish:" + msg.toString());
 
-		// TODO: publish the message to clients subscribed to the topic
-		// topic and message is contained in the subscribe message
-		// messages must be sent used the corresponding client session objects
+	
 
 		Collection<ClientSession> clients = storage.getSessions();
 

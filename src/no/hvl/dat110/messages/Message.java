@@ -2,7 +2,6 @@ package no.hvl.dat110.messages;
 
 public abstract class Message {
 
-	// base class for messages exchanged between broker and clients
 	private MessageType type;
 	private String user;
 	
