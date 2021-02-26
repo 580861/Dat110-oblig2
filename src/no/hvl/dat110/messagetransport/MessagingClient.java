@@ -30,10 +30,10 @@ public class MessagingClient {
     
 			connection = new Connection(clientSocket);
 			
-		} catch (IOException ex) {
+		} catch (IOException e) {
 			
-			System.out.println("Messaging client: " + ex.getMessage());
-			ex.printStackTrace();
+			System.out.println("Messaging client: " + e.getMessage());
+			e.printStackTrace();
 
 		}
 		
